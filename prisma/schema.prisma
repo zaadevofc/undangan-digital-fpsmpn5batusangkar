@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+
+  name     String
+  username String @unique
+  email    String @unique
+  picture  String
+  role     ROLE   @default(PESERTA)
+
+  undangan Undangan[]
+
+  createdAt DateTime @default(now())
+  upatedAt  DateTime @updatedAt
+}
+
+model Undangan {
+  id     String  @id @default(cuid())
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
+
+  invitation_id     String @unique
+  invitation_order  Int?   @default(autoincrement())
+  invitation_agenda String
+  invitation_person String
+
+  invitation_create DateTime @default(now())
+  invitation_upate  DateTime @updatedAt
+}
+
+enum ROLE {
+  ADMIN
+  PESERTA
+}
