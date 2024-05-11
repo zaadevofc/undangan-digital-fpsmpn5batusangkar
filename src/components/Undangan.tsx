@@ -1,10 +1,16 @@
 "use client";
 
+import { effect } from "@preact/signals-react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { METADATA } from "~/consts";
 
 const Undangan = ({ peserta }: any) => {
   const tab = useSearchParams().get("tab") || "";
+
+  effect(() => {
+    document.title = (`"${peserta}" ` + METADATA.title) as any;
+  });
 
   return (
     <>

@@ -24,7 +24,7 @@ export const SEO = {
 
 export const METADATA: Metadata = {
   title: SEO.SITE_TITLE,
-  description: SEO.SITE_TITLE,
+  description: SEO.SITE_DESCRIPTION,
   authors: SEO.SITE_AUTHORS,
   creator: SEO.SITE_CREATOR,
   category: SEO.SITE_CATEGORY,

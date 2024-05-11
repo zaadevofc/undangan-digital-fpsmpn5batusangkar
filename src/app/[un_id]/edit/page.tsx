@@ -11,7 +11,7 @@ import { LuCopy, LuForward, LuPenSquare, LuSave } from "react-icons/lu";
 import { WhatsappShareButton } from "react-share";
 import Loading from "~/app/loading";
 import FloatButton from "~/components/FloatButton";
-import { fetchJson, postJson } from "~/consts";
+import { METADATA, fetchJson, postJson } from "~/consts";
 
 const find = async (id: any) => await fetchJson(`/api/signal/find?id=${id}`);
 
@@ -41,6 +41,12 @@ const EditUndangan = ({ params }: any) => {
     setNewPerson("");
     setLoading(false);
   };
+
+  effect(() => {
+    document.title = (`${
+      result?.data ? `"${isNewPerson || result?.data?.invitation_person}"` : ''
+    } ` + METADATA.title) as any;
+  });
 
   if (loading) return <Loading />;
   if (!result.data)

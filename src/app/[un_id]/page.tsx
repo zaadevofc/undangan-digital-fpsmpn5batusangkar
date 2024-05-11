@@ -4,8 +4,8 @@ import { useAsync } from "react-async-hook";
 import FloatButton from "~/components/FloatButton";
 import Share from "~/components/Share";
 import Undangan from "~/components/Undangan";
-import Loading from "../loading";
 import { fetchJson } from "~/consts";
+import Loading from "../loading";
 
 const find = async (id: any) => await fetchJson(`/api/signal/find?id=${id}`);
 
