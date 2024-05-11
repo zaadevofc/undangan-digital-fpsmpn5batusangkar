@@ -9,7 +9,7 @@ const Undangan = ({ peserta }: any) => {
   const tab = useSearchParams().get("tab") || "";
 
   effect(() => {
-    document.title = (`${peserta ? `${peserta}` : ""} ` +
+    document.title = (`${peserta ? `"${peserta}"` : ""} ` +
       METADATA.title) as any;
   });
 
