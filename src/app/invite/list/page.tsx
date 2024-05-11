@@ -32,7 +32,7 @@ const InvitList = () => {
   return (
     <>
       <section
-        className={`overflow-hidden max-w-lg mx-auto flex min-h-dvh w-full`}
+        className={`overflow-hidden max-w-lg mx-auto flex min-h-dvh w-full pb-20`}
       >
         <div className={`flex flex-col max-w-lg w-full overflow-hidden`}>
           <div

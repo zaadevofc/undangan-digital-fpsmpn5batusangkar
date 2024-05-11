@@ -38,11 +38,13 @@ const Share = ({
   if (user?.role == "ADMIN")
     return (
       <>
-        <div className={`fixed flex flex-col max-w-lg w-full overflow-hidden `}>
+        <div
+          className={`fixed flex flex-col max-w-lg w-full overflow-x-hidden`}
+        >
           <div
             className={`${
               tab == "share" ? "translate-x-[0px]" : "translate-x-[-600px]"
-            } p-5 flex flex-col gap-8 transition-all ease-in-out delay-100 duration-300`}
+            } p-5 flex flex-col gap-5 transition-all ease-in-out delay-100 duration-300`}
           >
             <h1
               className={`flex items-center gap-4 text-xl font-bold border-b border-gray-500 pb-5`}
