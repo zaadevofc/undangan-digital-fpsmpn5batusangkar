@@ -44,18 +44,21 @@ const EditUndangan = ({ params }: any) => {
 
   effect(() => {
     document.title = (`${
-      result?.data ? `"${isNewPerson || result?.data?.invitation_person}"` : ''
+      result?.data ? `"${isNewPerson || result?.data?.invitation_person}"` : ""
     } ` + METADATA.title) as any;
   });
 
   if (loading) return <Loading />;
   if (!result.data)
     return (
-      <main className="flex items-center justify-center min-h-dvh">
-        <h1 className="font-semibold text-center font-['Oooh_Baby'] text-4xl px-5">
-          Undangan Tidak Ditemukan!
-        </h1>
-      </main>
+      <>
+        <main className="flex items-center justify-center min-h-dvh">
+          <h1 className="font-semibold text-center font-['Oooh_Baby'] text-4xl px-5">
+            Undangan Tidak Ditemukan!
+          </h1>
+        </main>
+        <FloatButton />
+      </>
     );
   if (user?.role == "ADMIN")
     return (
